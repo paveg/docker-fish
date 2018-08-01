@@ -2,8 +2,9 @@ FROM alpine:latest
 MAINTAINER Ryota Ikezawa (https://github.com/paveg)
 
 RUN apk update \
-  && apk add --no-cache fish vim\
-  && rm -f /tmp/* /etc/apk/cache/*
+  && apk add --no-cache fish vim curl git less\
+  && rm -f /tmp/* /etc/apk/cache/* \
+  && curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
 
 RUN sed -i -e "s/bin\/ash/usr\/bin\/fish/" /etc/passwd
 
