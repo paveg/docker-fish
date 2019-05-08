@@ -13,3 +13,8 @@ $ make build
 $ make fish # awesome interactive fish shell!
 ```
 
+# Branches
+
+- master (default)
+- develop
+
